@@ -1,5 +1,5 @@
 # exercise
-a collection of naive programing sample
+This repo is a collection of naive programing samples. Each archive represents an independent ROS package. Just **clone** it into your catkin workspace, **compile** and **run**.
 
 ## eigen_test
 demonstrates how to use Eigen Library with ROS indigo
