@@ -10,23 +10,21 @@ demonstrates how to make conversion between point cloud message and file
 ## multi_thread
 example for multi-thread programing in ROS
 
-0. include header file *ros/callback_queue.h* **at the beginning of file**
+at the **beginning of file:**
 ```
-#include <ros/callback_queue.h>
+#include <ros/callback_queue.h> 
 ```
-1. Define a **callback queue** *cq*
+in **global range**
 ```
-ros::CallbackQueue cq;
+ros::CallbackQueue cq; // Define a callback queue.
 ```
-2. Assigh the **callback queue** *cq* to specific **NodeHandle** *nh*
+in **main()** or **object constructor**
 ```
-nh.setCallbackQueue(&cq);
+ros::NodeHandle nh;
+nh.setCallbackQueue(&cq); // Assigh cq to specific nh
 ```
-3. Define a **asyncspinner** *aspin* and bind it with *cq*
+in **main()**
 ```
-ros::AsyncSpinner aspin(1, &cq);
-```
-4. start the spinner 
-```
-aspin.start()
+ros::AsyncSpinner aspin(1, &cq); // Define a spinner and bind it with cq
+aspin.start();                   // Start the spinner 
 ```
